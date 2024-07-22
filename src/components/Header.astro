@@ -1,19 +1,37 @@
 ---
-import LogoBlanco from '../components/LogoBlanco.astro'
+import LogoBlanco from "./LogoBlanco.astro";
 ---
 
-<header class="py-3 px-10 fixed top-0 w-full flex justify-between items-center z-40">
-    <div class="flex text-center items-center gap-2 grow basis-0
-    ">
-        <LogoBlanco />
-    </div>
-    <h1 class="font-bold text-2xl text-white">Comunidad Clan</h1>
-    <nav class="grow flex justify-end basis-0">
-        <ul class="flex px-4 py-2 gap-6 font-semibold text-white">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#"id="menu-despegable">Eventos</a></li>
-            <li><a href="#">Contáctanos</a></li>
-        </ul>
+<header class="fixed top-0 w-full z-40 ">
+    <nav class="px-12 h-16 flex justify-between font-semibold items-center text-center text-white relative">
+        <div>
+            <a href="#" class="grow basis-0">
+                <LogoBlanco />
+            </a>
+        </div>
+
+        <div id="dropDownMenu" class="absolute lg:static lg:w-auto flex left-0 -top-[1000px] lg:bg-transparent bg-[#ffffff20] w-full flex-col items-center text-center gap-6 ">
+            <ul class="flex flex-col lg:flex-row gap-8 my-2 lg:grow basis-0">
+                <li><a href="#" class="hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl" >Inicio</a></li>
+                <li><a href="#" class="whitespace-nowrap hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl">Sobre Nosotros</a></li>
+                <li><a href="#" class="hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl">Eventos</a></li>
+                <li><a href="#" class="hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl">Contáctanos</a></li>
+            </ul>
+        </div>
+        
+        <div class="flex justify-end lg:hidden text-white grow basis-0">
+            <i id="toggleBtn" class=" fa-solid fa-bars text-2xl"></i>
+        </div>
     </nav>
+
+    <script>
+        const toggleBtn = document.getElementById("toggleBtn")
+        const drpMenu = document.getElementById("dropDownMenu")
+        
+    
+        toggleBtn.addEventListener("click", () => {
+            drpMenu.classList.toggle("top-16")
+        })
+    </script>
 </header>
+

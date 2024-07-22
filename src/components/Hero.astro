@@ -3,12 +3,12 @@ import Somos from "./Somos.astro";
 ---
 
 <section class="bg-black h-screen text-center relative overflow-hidden">
-    <header class="z-30 relative flex justify-start mx-11 p-10 items-center h-full">
+    <header class="z-30 absolute top-64 md:top-44 left-20 h-full">
         
-        <img src="/public/somos-clan-somos.gif" alt="" width="500px">
+        <img src="/public/somos-clan-somos.gif" alt="" width="500px" class="">
         
     </header>
-    <div class="absolute top-0 bottom-0 h-full z-10">
-        <video autoplay muted loop src="/public/video.mp4"  class=" overflow-hidden">
+    <div class="absolute top-0 bottom-0 h-screen w-full z-10 overflow-hidden">
+        <video autoplay muted loop src="/public/video.avif"  class=" bg-cover h-full w-full object-cover">
     </div>
 </section>
