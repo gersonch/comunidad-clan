@@ -3,26 +3,30 @@ import LogoBlanco from "./LogoBlanco.astro";
 
 interface Props {
     textColor: string;
+    bg: string;
+    fixed: string;
+    top: string;
 }
 
-const { textColor } = Astro.props
+const { textColor, bg, fixed, top } = Astro.props
 ---
 
-<header class="fixed top-0 w-full z-40">
-    <nav class=`px-12 h-16 flex justify-between font-semibold items-center text-center ${textColor} relative`>
+<header class=`${fixed} ${top} w-full z-40`>
+    <nav class=`nav px-12 h-16 flex justify-between font-semibold items-center text-center ${textColor} relative ${bg} `>
         <div>
-            <a href="#" class="grow basis-0">
+            <a href="#" class="grow basis-0 z-40">
                 <LogoBlanco />
             </a>
         </div>
 
-        <div id="dropDownMenu" class="absolute lg:static lg:w-auto flex left-0 -top-[1000px] lg:bg-transparent bg-[#ffffff20] w-full flex-col items-center text-center gap-6 ">
-            <ul class="flex flex-col lg:flex-row gap-8 my-2 lg:grow basis-0">
+        <div id="dropDownMenu" class="absolute lg:static lg:w-auto flex left-0 -top-[1000px] lg:bg-transparent w-full h-screen md:h-auto flex-col items-center text-center gap-6 transition-all bg-black z-0">
+            <ul class="flex flex-col lg:flex-row gap-10 my-2 lg:grow basis-0 text-xl md:text-base">
                 <li>
-                    <a href="#" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl" >Inicio</a>
+                    <a href="/" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl" >Inicio</a>
                 </li>
-                <li>
-                    <a href="../sobre-nosotros" class="whitespace-nowrap hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">Sobre Nosotros</a>
+                <li class="text-center">
+                    <a href="../sobre-nosotros" class="whitespace-nowrap hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">
+                        Sobre Nosotros</i></a>   
                 </li>
                 <li>
                     <a href="../eventos" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">Eventos</a>
@@ -41,11 +45,14 @@ const { textColor } = Astro.props
     <script>
         const toggleBtn = document.getElementById("toggleBtn")
         const drpMenu = document.getElementById("dropDownMenu")
+        const nav = document.querySelector("nav")
         
     
         toggleBtn.addEventListener("click", () => {
-            drpMenu.classList.toggle("top-16")
+            drpMenu.classList.toggle("top-[63px]")
         })
+        
+       
     </script>
 </header>
 
