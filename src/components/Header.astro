@@ -1,9 +1,15 @@
 ---
 import LogoBlanco from "./LogoBlanco.astro";
+
+interface Props {
+    textColor: string;
+}
+
+const { textColor } = Astro.props
 ---
 
-<header class="fixed top-0 w-full z-40 ">
-    <nav class="px-12 h-16 flex justify-between font-semibold items-center text-center text-white relative">
+<header class="fixed top-0 w-full z-40">
+    <nav class=`px-12 h-16 flex justify-between font-semibold items-center text-center ${textColor} relative`>
         <div>
             <a href="#" class="grow basis-0">
                 <LogoBlanco />
@@ -12,10 +18,18 @@ import LogoBlanco from "./LogoBlanco.astro";
 
         <div id="dropDownMenu" class="absolute lg:static lg:w-auto flex left-0 -top-[1000px] lg:bg-transparent bg-[#ffffff20] w-full flex-col items-center text-center gap-6 ">
             <ul class="flex flex-col lg:flex-row gap-8 my-2 lg:grow basis-0">
-                <li><a href="#" class="hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl" >Inicio</a></li>
-                <li><a href="#" class="whitespace-nowrap hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl">Sobre Nosotros</a></li>
-                <li><a href="#" class="hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl">Eventos</a></li>
-                <li><a href="#" class="hover:bg-gray-500 hover:transition px-3 py-1 rounded-xl">Contáctanos</a></li>
+                <li>
+                    <a href="#" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl" >Inicio</a>
+                </li>
+                <li>
+                    <a href="../sobre-nosotros" class="whitespace-nowrap hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">Sobre Nosotros</a>
+                </li>
+                <li>
+                    <a href="../eventos" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">Eventos</a>
+                </li>
+                <li>
+                    <a href="../contactanos" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">Contáctanos</a>
+                </li>
             </ul>
         </div>
         
