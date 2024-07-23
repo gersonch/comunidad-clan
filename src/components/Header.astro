@@ -1,58 +1,59 @@
 ---
 import LogoBlanco from "./LogoBlanco.astro";
-
-interface Props {
-    textColor: string;
-    bg: string;
-    fixed: string;
-    top: string;
-}
-
-const { textColor, bg, fixed, top } = Astro.props
 ---
 
-<header class=`${fixed} ${top} w-full z-40`>
-    <nav class=`nav px-12 h-16 flex justify-between font-semibold items-center text-center ${textColor} relative ${bg} `>
-        <div>
-            <a href="#" class="grow basis-0 z-40">
-                <LogoBlanco />
-            </a>
+<header class=" z-40 fixed top-0 w-full">
+    <div class="text-white flex justify-between px-4 py-2 text-center items-center w-[92%] mx-auto my-0">
+        <div class="logo z-50 cursor-pointer">
+            <LogoBlanco />
         </div>
-
-        <div id="dropDownMenu" class="absolute lg:static lg:w-auto flex left-0 -top-[1000px] lg:bg-transparent w-full h-screen md:h-auto flex-col items-center text-center gap-6 transition-all bg-black z-0">
-            <ul class="flex flex-col lg:flex-row gap-10 my-2 lg:grow basis-0 text-xl md:text-base">
+        <div  class="burger lg:hidden text-3xl z-50 cursor-pointer">
+           
+                <ion-icon id="icon"  name="menu" class="hover:animate-jump animate-once animate-duration-500 animate-ease-in"></ion-icon>
+            
+        </div>
+        <nav class="nav absolute lg:static lg:min-h-fit bg-[url(../bg-burger.jpg)] lg:bg-none bg-cover min-h-[100vh] pt-2 lg:pt-0 left-0 top-[10000px] lg:w-auto w-full flex flex-col lg:flex-row justify-center transition-all duration-700 fade-in animate-once animate-duration-1000 animate-ease-in z-40 items-center gap-8 text-gray-200">
+            <ul class="flex flex-col lg:flex-row gap-10 text-2xl font-bold lg:text-sm lg:font-semibold lg:gap-0 text-center items-center">    
                 <li>
-                    <a href="/" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl" >Inicio</a>
+                    <a href="/" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Inicio</a>
                 </li>
-                <li class="text-center">
-                    <a href="../sobre-nosotros" class="whitespace-nowrap hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">
+                <li class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">
+                    <a href="../sobre-nosotros" class="">
                         Sobre Nosotros</i></a>   
                 </li>
                 <li>
-                    <a href="../eventos" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">Eventos</a>
+                    <a href="../eventos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Eventos</a>
                 </li>
                 <li>
-                    <a href="../contactanos" class="hover:bg-gray-500 hover:transition px-4 py-2 rounded-xl">Contáctanos</a>
+                    <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Contáctanos</a>
                 </li>
             </ul>
-        </div>
-        
-        <div class="flex justify-end lg:hidden text-white grow basis-0">
-            <i id="toggleBtn" class=" fa-solid fa-bars text-2xl"></i>
-        </div>
-    </nav>
 
+
+            <div class="rs flex ">
+                <div class="ig px-4 border-r-2">
+                    <a href="https://www.instagram.com/comunidadclan/" target="_blank" class="text-2xl "><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
+                <div class="yt px-4">
+                    <a href="https://www.youtube.com/@comunidadclan" target="_blank" class="text-2xl"><ion-icon name="logo-youtube"></ion-icon></a>
+                </div>
+            </div>
+        </nav>
+        
+    </div>
     <script>
-        const toggleBtn = document.getElementById("toggleBtn")
-        const drpMenu = document.getElementById("dropDownMenu")
-        const nav = document.querySelector("nav")
-        
-    
-        toggleBtn.addEventListener("click", () => {
-            drpMenu.classList.toggle("top-[63px]")
+
+
+        const burger = document.querySelector('.burger')
+        const nav = document.querySelector('.nav')
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('top-[0px]')
+            burger.classList.toggle('animate-rotate-x')
         })
-        
-       
+
     </script>
 </header>
+
+
 

@@ -6,5 +6,5 @@ export default {
       "bg-img": "url(/public/bg-img.jpg)",
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 };
