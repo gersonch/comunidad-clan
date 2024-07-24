@@ -27,8 +27,12 @@ import LogoBlanco from "./LogoBlanco.astro";
                         <a href="../eventos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Eventos</a>
                     </li>
                     <li>
+                        <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Ministerios</a>
+                    </li>
+                    <li>
                         <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Contáctanos</a>
                     </li>
+                    
                 </ul>
                 <div class="rs flex ">
                     <div class="ig px-4 border-r-2">
@@ -61,6 +65,13 @@ import LogoBlanco from "./LogoBlanco.astro";
 
 
         window.addEventListener('scroll', () => {
+        // Verifica si el navbar está desplegado
+        const navIsVisible = nav.classList.contains('-top-[0%]');
+
+        // Si el navbar está desplegado, no hacer nada
+        if (navIsVisible) return;
+
+
         if (window.scrollY > lastScrollY) {
             // Scrolling down
             header.classList.add('opacity-0');
