@@ -2,8 +2,8 @@
 import LogoBlanco from "./LogoBlanco.astro";
 ---
 
-<header class=" z-40 fixed top-0 w-full">
-    <div class="text-white flex justify-between px-4 py-2 text-center items-center w-[92%] mx-auto my-0">
+<header id="header" class=" z-40 fixed top-0 w-full transition duration-300">
+    <div class="text-white flex justify-between px-4 py-3 text-center items-center w-[92%] mx-auto my-0">
         <div class="logo z-50 cursor-pointer">
             <LogoBlanco />
         </div>
@@ -12,33 +12,34 @@ import LogoBlanco from "./LogoBlanco.astro";
                 <ion-icon id="icon"  name="menu" class="hover:animate-jump animate-once animate-duration-500 animate-ease-in"></ion-icon>
             
         </div>
-        <nav class="nav absolute lg:static lg:min-h-fit bg-[url(../bg-burger.jpg)] lg:bg-none bg-cover min-h-[100vh] pt-2 lg:pt-0 left-0 top-[10000px] lg:w-auto w-full flex flex-col lg:flex-row justify-center transition-all duration-700 fade-in animate-once animate-duration-1000 animate-ease-in z-40 items-center gap-8 text-gray-200">
-            <ul class="flex flex-col lg:flex-row gap-10 text-2xl font-bold lg:text-sm lg:font-semibold lg:gap-0 text-center items-center">    
-                <li>
-                    <a href="/" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Inicio</a>
-                </li>
-                <li class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">
-                    <a href="../sobre-nosotros" class="">
-                        Sobre Nosotros</i></a>   
-                </li>
-                <li>
-                    <a href="../eventos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Eventos</a>
-                </li>
-                <li>
-                    <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Contáctanos</a>
-                </li>
-            </ul>
 
-
-            <div class="rs flex ">
-                <div class="ig px-4 border-r-2">
-                    <a href="https://www.instagram.com/comunidadclan/" target="_blank" class="text-2xl "><ion-icon name="logo-instagram"></ion-icon></a>
+        <div class="nav absolute lg:static lg:min-h-fit bg-[url(../bg-burger.png)] lg:bg-none bg-cover min-h-[100vh] pt-2 lg:pt-0 left-0 -top-[1000px] duration-1000 lg:w-auto w-full flex flex-col lg:flex-row justify-center z-40 items-center gap-8 text-gray-200 transition-all animate-fade animate-duration-[1000ms] opacity-0">
+            <nav class="flex flex-col lg:flex-row justify-center text-center items-center gap-8">
+                <ul class="flex flex-col lg:flex-row gap-10 text-2xl font-bold lg:text-sm lg:font-semibold lg:gap-0 text-center items-center">
+                    <li>
+                        <a href="/" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Inicio</a>
+                    </li>
+                    <li class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">
+                        <a href="../sobre-nosotros" class="">
+                            Sobre Nosotros</i></a>
+                    </li>
+                    <li>
+                        <a href="../eventos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Eventos</a>
+                    </li>
+                    <li>
+                        <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Contáctanos</a>
+                    </li>
+                </ul>
+                <div class="rs flex ">
+                    <div class="ig px-4 border-r-2">
+                        <a href="https://www.instagram.com/comunidadclan/" target="_blank" class="text-2xl "><ion-icon name="logo-instagram"></ion-icon></a>
+                    </div>
+                    <div class="yt px-4">
+                        <a href="https://www.youtube.com/@comunidadclan" target="_blank" class="text-2xl"><ion-icon name="logo-youtube"></ion-icon></a>
+                    </div>
                 </div>
-                <div class="yt px-4">
-                    <a href="https://www.youtube.com/@comunidadclan" target="_blank" class="text-2xl"><ion-icon name="logo-youtube"></ion-icon></a>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
         
     </div>
     <script>
@@ -46,12 +47,37 @@ import LogoBlanco from "./LogoBlanco.astro";
 
         const burger = document.querySelector('.burger')
         const nav = document.querySelector('.nav')
+        const header = document.getElementById('header');
 
         burger.addEventListener('click', () => {
-            nav.classList.toggle('top-[0px]')
+            nav.classList.toggle('-top-[0%]')
+            nav.classList.toggle('opacity-100')
             burger.classList.toggle('animate-rotate-x')
         })
 
+
+        let lastScrollY = window.scrollY;
+
+
+
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            // Scrolling down
+            header.classList.add('opacity-0');
+            header.classList.remove('opacity-100');
+        } else {
+            // Scrolling up
+            header.classList.add('opacity-100');
+            header.classList.remove('opacity-0');
+        }
+
+        if (window.scrollY > 50) {
+                header.classList.add('bg-black'); // Cambia el color de fondo aquí
+            } else {
+                header.classList.remove('bg-black');
+        }
+        lastScrollY = window.scrollY;
+    });
     </script>
 </header>
 
