@@ -1,0 +1,18 @@
+---
+interface Props{
+    mes: string,
+    texto: string
+}
+
+const { mes, texto } = Astro.props;
+---
+
+
+<div class="card border border-white border-opacity-45 shadow shadow-yellow-100 flex w-[350px] lg:h-36 px-4 py-5">
+    <div class="flex w-fullpy-2 items-center ">
+        <div class="fecha text-2xl font-bold px-4 border-r border-white border-opacity-30 py-5">{mes}</div>
+        <div class="nombre-evento px-4 ">
+            <div class="texto font-semibold">{texto}</div>
+        </div>
+    </div>
+</div>

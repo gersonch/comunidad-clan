@@ -1,0 +1,52 @@
+---
+import CardEventos from "./CardEventos.astro";
+
+interface Props{
+    mes: string
+}
+
+const { mes } = Astro.props;
+---
+
+<main class="py-20 px-4 bg-[url(../bg-01.png)] bg-cover text-white">
+    <div class="container flex flex-col max-w-screen-xl my-0 mx-auto">
+        <div class="arriba">
+            <div class="flex flex-col px-6">
+                <div class="mes text-7xl font-bold py-2 relative">
+                    {mes}
+                <div class="text-lg absolute top-16 left-48 -rotate-12 bg-slate-800 text-yellow-400 px-2 py-1 rounded-xl div">Eventos</div>
+                </div>
+                <div class="text-xl font-semibold ">Comunidad Clan</div>
+            </div>
+        </div>
+
+
+        <div class="abajo py-20 flex justify-center">
+            
+            
+            <div class="cards grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 ">
+                
+                <div class="lg:col-start-2 lg:col-span-3">
+                    <CardEventos mes="03" texto="lorem ipsum dolor et tetanus in domini patis et dolorem"/>
+                </div>
+                
+
+                <div class="lg:col-start-1">
+                    <CardEventos mes="03" texto="lorem ipsum dolor et tetanus in domini patis et dolorem"/>
+                </div>
+                
+                <div class="lg:col-start-3">
+                    <CardEventos mes="03" texto="lorem ipsum dolor et tetanus in domini patis et dolorem"/>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<style>
+    .div{
+        font-family: "Playwrite DK Loopet", cursive;
+    }
+</style>
