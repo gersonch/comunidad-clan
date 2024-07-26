@@ -3,9 +3,11 @@ import Cards from "./Cards.astro"
 ---
        
        
-       <main class=" "> 
-            <div class="flex flex-col justify-center items-center px-4 py-20">
-                <h1 class="text-3xl font-semibold mb-10 text-white">Clan Worship</h1>
+       <main class=""> 
+            <div class="flex flex-col justify-center items-center px-4 py-10  gap-y-6 ">
+                <h1 class="text-6xl font-bold mb-10 text-white text py-10 border-t-white border-t border-opacity-40">
+                    <img src="../clan-worship.svg" alt="" width="700px">
+                </h1>
                 <div class="cards md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-20 text-white">
 
                     <div>
@@ -34,3 +36,8 @@ import Cards from "./Cards.astro"
             </div>
         </main>
         
+        <style>
+            .text{
+                font-family: "Dancing Script", cursive;
+            }
+        </style>

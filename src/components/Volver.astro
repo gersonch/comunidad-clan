@@ -1,0 +1,42 @@
+<div id="volver-al-inicio" class="w-10 h-10 rounded-full bg-gray-600  justify-center items-center text-2xl flex right-4 bottom-4 z-50 fixed  text-white cursor-pointer hover:scale-110 animate-bounce duration-75 ">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+</div>
+    
+
+<style>
+    #volver-al-inicio {
+      opacity: 0; /* Oculto inicialmente */
+      transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
+      visibility: hidden; /* Asegura que el botón no ocupe espacio cuando está oculto */
+    }
+  
+    #volver-al-inicio.show {
+      opacity: 1; /* Opacidad completa */
+      visibility: visible; /* Hace que el botón sea visible */
+    }
+  </style>
+<script>
+
+
+
+    
+   
+
+    window.addEventListener('scroll', () => {
+        const volver = document.getElementById('volver-al-inicio')
+
+        if (window.scrollY > 100){
+            volver.classList.add('show')
+        } else{
+            volver.classList.remove('show')
+        }
+    })
+
+    document.getElementById('volver-al-inicio').addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+</script>
