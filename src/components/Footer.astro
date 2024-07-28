@@ -17,9 +17,11 @@ import LogoBlanco from "./LogoBlanco.astro";
                     </div>
                     <div class="flex flex-col gap-4">
                         <h2 class="font-bold">Inscribete a nuestro NewsLetter</h2>
-                        <form action="" class="flex gap-4 font-semibold">
-                            <input type="email" placeholder="ingresa tu email" class="px-4 py-2 xl:w-full text-black">
-                            <button class="border-2 border-white px-4 py-2">Ingresar</button>
+                        <form action="https://formsubmit.co/fa630aae07396f4da9629efd9bfbd69e" method="POST" class="flex gap-4 font-semibold">
+                            <input type="email" placeholder="ingresa tu email" class="px-4 py-2 xl:w-full text-black" name="NewsLetter">
+                            <input type="submit" class="border-2 border-white px-4 py-2 hover:bg-slate-50 hover:text-black cursor-pointer transition" value="Ingresar"/>
+                            <input type="hidden" name="_next" value="http://localhost:4321">
+                            <input type="hidden" name="_captcha" value="false">
                         </form>
                     </div>
                 </main>

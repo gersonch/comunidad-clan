@@ -1,0 +1,29 @@
+<div class="flex flex-col items-center pb-44 pt-10">
+    <h1 class="text-white py-10 text-4xl md:text-5xl font-bold">¡Envíanos un Mensaje!</h1>
+    
+    <form class= "max-w-sm w-full" action="https://formsubmit.co/fa630aae07396f4da9629efd9bfbd69e" method="POST">
+        <div class="mb-5">
+          <label for="email" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Nombre</label>
+          <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Escribe tú nombre" name="Nombre" required />
+        </div>
+        <div class="mb-5">
+            <label for="email" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Email</label>
+            <input type="email" id="email" class="shadow-sm bg-white border border-gray-300 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white text-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="nombre@email.com" name="email" required />
+        </div>
+        <div class="mb-5">
+            <label for="asunto" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Asunto</label>
+            <input type="text" id="asunto" class="shadow-sm bg-white border border-gray-300 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white text-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Quiero que oren por mí" name="Asunto"/>
+        </div>
+        <label for="message" class="block mb-2 text-lg font-medium text-white ">Mensaje</label>
+        <textarea id="message" rows="4" class="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Déjanos tu mensaje." name="mensaje" required></textarea>
+
+        <div class="mt-5">
+            <input type="submit" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white border border-white px-4 py-2 hover:bg-slate-50 hover:text-black cursor-pointer transition">
+        </div>
+
+        <input type="hidden" name="_next" value="http://localhost:4321/thanks">
+        <input type="hidden" name="_captcha" value="false">
+        
+ 
+    
+</div>

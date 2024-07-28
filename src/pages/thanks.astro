@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Volver from "../components/Volver.astro";
+---
+
+<Layout title="Gracias por tu mensaje - Comunidad Clan">
+    <div class="bg-[url(../bg-01.png)] bg-fixed bg-cover bg-no-repeat h-screen">
+        <Header fixed="" top=""/>
+        <div class="h-screen flex flex-col text-center">
+            <h1 class="text-white font-bold text-center text-5xl py-20">¡Gracias por tu mensaje!</h1>
+            <p class="text-white font-bold text-3xl">Estaremos en Contacto</p>
+        </div>
+    </div>
+    <Volver />
+    <Footer />
+</Layout>

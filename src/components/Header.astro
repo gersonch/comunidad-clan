@@ -1,8 +1,15 @@
 ---
 import LogoBlanco from "./LogoBlanco.astro";
+
+interface Props{
+    fixed: string;
+    top: string;
+}
+
+const { fixed, top } = Astro.props
 ---
 
-<header id="header" class=" z-40 fixed top-0 w-full transition duration-300">
+<header id="header" class=`z-40 ${fixed} ${top} w-full transition duration-300`>
     <div class="text-white flex justify-between px-4 py-3 text-center items-center w-[92%] mx-auto my-0">
         <div class="logo z-50 cursor-pointer">
             <LogoBlanco />
