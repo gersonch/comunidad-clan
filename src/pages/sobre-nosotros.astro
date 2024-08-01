@@ -3,25 +3,40 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Nosotros from '../components/Nosotros.astro'
-
+import Volver from '../components/Volver.astro';
+import TextSobreNosotros from '../components/TextSobreNosotros.astro'
 
 ---
 
 <Layout title="Sobre Nosotros - Comunidad Clan">
 
     
-    <Header />
-    <div class="bg-[url('../public/bg-img-02.jpg')] bg-cover h-screen flex justify-center text-center items-center bg-scroll">
-        <h1 class="text-white text-5xl md:text-7xl drop-shadow-2xl hover:animate-pulse cursor-default">Quienes Somos</h1>
+    <div class="bg-[url('../public/bg-img-02.jpg')] bg-cover h-screen">
+        <Header top='' fixed=''/>
+        <div class="flex justify-center text-center items-center h-3/4">
+            <h1 class="text-white text-5xl md:text-7xl drop-shadow-2xl hover:animate-pulse cursor-default">Quienes Somos</h1>
+        </div>
+        
+        
     </div>
-    
-    <style>
-        h1{
-            font-family: "Playwrite CU", cursive;
-        }
-    </style>
-    <Nosotros />
+    <TextSobreNosotros />
+    <div class="bg-[url('https://dg.imgix.net/the-most-repeated-verse-in-the-bible-wfq9puhm-en/landscape/the-most-repeated-verse-in-the-bible-wfq9puhm-2c238cf97d4c72a4be85c9d86448d20e.jpg?ts=1538421135&ixlib=rails-4.3.1&auto=format%2Ccompress&fit=min&w=700&h=394&dpr=2&ch=Width%2CDPR')] bg-cover h-screen">
+        <div class="flex justify-center text-center items-center h-3/4">
+            <h1 class="text-white text-5xl md:text-7xl drop-shadow-2xl hover:animate-pulse cursor-default">Nuestra Misión</h1>
+        </div>
+    </div>
+
+    <TextSobreNosotros />
+
+    <Volver />
     <Footer />
 
 
 </Layout>
+
+
+<style>
+    h1{
+        font-family: "Playwrite CU", cursive;
+    }
+</style>
