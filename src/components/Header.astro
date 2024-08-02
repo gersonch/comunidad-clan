@@ -22,7 +22,7 @@ const { fixed, top } = Astro.props
             
         </div>
 
-        <div class="nav absolute lg:static lg:min-h-fit bg-[url(../bg-burger.png)] lg:bg-none bg-cover min-h-[100vh] pt-2 lg:pt-0 left-0 -top-[1000px] duration-1000 lg:w-auto w-full flex flex-col lg:flex-row justify-center z-40 items-center gap-8 text-gray-200 transition-all animate-fade animate-duration-[1000ms] opacity-0">
+        <div class="nav absolute lg:static lg:min-h-fit bg-[url(../bg-burger.png)] lg:bg-none bg-cover min-h-[100vh] pt-2 lg:pt-0 left-0 top-0 duration-500 lg:w-auto w-full flex flex-col lg:flex-row justify-center z-40 items-center gap-8 text-gray-200 opacity-0 lg:opacity-100">
             <nav class="flex flex-col lg:flex-row justify-center text-center items-center gap-8">
                 <ul class="flex flex-col lg:flex-row gap-10 text-2xl font-bold lg:text-sm lg:font-semibold lg:gap-0 text-center items-center">
                     <li>
@@ -55,23 +55,17 @@ const { fixed, top } = Astro.props
         </div>
         
     </div>
-
-
-    <style>
-        .nav{
-            opacity: 0;
-        }
-    </style>
     <script>
 
 
         const burger = document.querySelector('.burger')
         const nav = document.querySelector('.nav')
         const header = document.getElementById('header');
+        
 
         burger.addEventListener('click', () => {
-            nav.classList.toggle('top-[0%]')
             nav.classList.toggle('opacity-100')
+            nav.classList.toggle('nav-open');
             burger.classList.toggle('animate-rotate-x')
         })
 
@@ -81,6 +75,11 @@ const { fixed, top } = Astro.props
 
 
         window.addEventListener('scroll', () => {
+        const navIsOpen = nav.classList.contains('nav-open');
+
+        // Si el navbar está desplegado, no hacer nada
+        if (navIsOpen) return;
+
         // Verifica si el navbar está desplegado
         const navIsVisible = nav.classList.contains('top-[0%]');
 
