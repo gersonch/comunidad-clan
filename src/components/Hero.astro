@@ -1,5 +1,6 @@
 ---
 import Somos from "./Somos.astro";
+import TextoDinamico from "./TextoDinamico.astro";
 import Volver from "./Volver.astro";
 ---
 
@@ -8,16 +9,7 @@ import Volver from "./Volver.astro";
         
         <!--<img src="/public/somos-clan-somos.gif" alt="" width="500px" class="">-->
         <!-- <h1 id="texto-dinamico" class="text-8xl text-left font-bold text-[#0A3A3F] w-11 transition-all z-0"></h1>-->
-        
-        <div class="">
-            <div id="texto-dinamico-container" class="text-8xl text-left font-bold text-[#0A3A3F] w-[349px] transition-all z-0">
-                <span id="texto-dinamico"></span>
-                <span id="cursor"></span>
-            </div>
-        </div>
-        
-        
-        
+        <TextoDinamico />
     </header>
     <!--<div class="absolute top-0 bottom-0 h-screen w-full z-10 overflow-hidden">
         <video autoplay muted loop src="/public/video.avif"  class=" bg-cover h-full w-full object-cover">
@@ -26,58 +18,3 @@ import Volver from "./Volver.astro";
     
 </section>
 
-<style>
-    span{
-        font-family: "League Spartan", sans-serif;
-    }
-
-    #cursor {
-    display: inline-block;
-    animation: blink 1s step-end infinite;
-    width: 12px;
-    height: 70px;
-    background-color: #0A3A3F;
-    margin-left: -20px;
-}
-
-@keyframes blink {
-    from, to {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-}
-
-    
-</style>
-
-<script>
-    const textoDinamico = document.getElementById('texto-dinamico');
-    const texto = ["Somos Clan, Somos Familia", "Somos Clan, Somos Comida", "Somos Clan, Somos Bros", "Somos Clan, Somos Familia", "Somos Clan, Somos Familia", "Somos Clan, Somos Familia"];
-
-    function efectoTyping(elemento, texto, i = 0, reverse = false) {
-        if (!reverse) {
-            elemento.textContent += texto[i];
-            if (i === texto.length - 1) {
-                setTimeout(() => efectoTyping(elemento, texto, i, true), 4000); // Espera antes de empezar a borrar
-            } else {
-                setTimeout(() => efectoTyping(elemento, texto, ++i), 150);
-            }
-        } else {
-            elemento.textContent = elemento.textContent.slice(0, -1);
-            if (elemento.textContent.length === 0) {
-                setTimeout(() => efectoTyping(elemento, texto), 4000); // Espera antes de empezar a escribir de nuevo
-            } else {
-                setTimeout(() => efectoTyping(elemento, texto, i, true), 150);
-            }
-        }
-}
-
-let i = Math.floor(Math.random() * 6);
-
-efectoTyping(textoDinamico, texto[i]); 
-
-
-
-</script>
