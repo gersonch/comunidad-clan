@@ -3,23 +3,25 @@ import Somos from "./Somos.astro";
 import Volver from "./Volver.astro";
 ---
 
-<section class="bg-black h-screen text-center relative overflow-hidden">
+<section class="bg-[url(../video.avif)] bg-cover h-screen text-center relative overflow-hidden">
     <header class="z-30 absolute top-64 md:top-44 left-[64px] h-full">
         
         <!--<img src="/public/somos-clan-somos.gif" alt="" width="500px" class="">-->
         <!-- <h1 id="texto-dinamico" class="text-8xl text-left font-bold text-[#0A3A3F] w-11 transition-all z-0"></h1>-->
         
-        <div id="texto-dinamico-container" class="text-8xl text-left font-bold text-[#0A3A3F] w-[349px] transition-all z-0">
-            <span id="texto-dinamico"></span>
-            <span id="cursor"></span>
+        <div class="">
+            <div id="texto-dinamico-container" class="text-8xl text-left font-bold text-[#0A3A3F] w-[349px] transition-all z-0">
+                <span id="texto-dinamico"></span>
+                <span id="cursor"></span>
+            </div>
         </div>
         
         
         
     </header>
-    <div class="absolute top-0 bottom-0 h-screen w-full z-10 overflow-hidden">
+    <!--<div class="absolute top-0 bottom-0 h-screen w-full z-10 overflow-hidden">
         <video autoplay muted loop src="/public/video.avif"  class=" bg-cover h-full w-full object-cover">
-    </div>
+    </div> -->
 
     
 </section>
