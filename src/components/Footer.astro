@@ -1,16 +1,19 @@
 ---
 import LogoBlanco from "./LogoBlanco.astro";
+import NewsletterForm from "./react-components/NewsletterForm.jsx";
 ---
 
 <div class="bg-black text-white p-4">
     <section >
         <div class="max-w-xl md:max-w-5xl mx-auto my-0  flex flex-col gap-4">
             <div >
-                <header class="my-4">
-                    <a href="../">
-                        <LogoBlanco />
-                    </a>
-                </header>
+                
+                    <div class="my-4">
+                        <a href="../" class="inline-block">
+                            <LogoBlanco />
+                        </a>
+                    </div>
+                
                 <main class="flex flex-col justify-between gap-4 md:flex-row ">
                     <div class="flex flex-col gap-4">
                         <h2 class="font-bold">Nos puedes encontrar en:</h2>
@@ -21,12 +24,7 @@ import LogoBlanco from "./LogoBlanco.astro";
                     </div>
                     <div class="flex flex-col gap-4">
                         <h2 class="font-bold">Inscribete a nuestro NewsLetter</h2>
-                        <form action="https://formsubmit.co/fa630aae07396f4da9629efd9bfbd69e" method="POST" class="flex gap-4 font-semibold">
-                            <input type="email" placeholder="ingresa tu email" class="px-4 py-2 xl:w-full text-black" name="NewsLetter">
-                            <input type="submit" class="border-2 border-white px-4 py-2 hover:bg-slate-50 hover:text-black cursor-pointer transition" value="Ingresar"/>
-                            <input type="hidden" name="_next" value="http://localhost:4321">
-                            <input type="hidden" name="_captcha" value="false">
-                        </form>
+                        <NewsletterForm client:load/>
                     </div>
                 </main>
             </div>

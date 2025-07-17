@@ -9,46 +9,45 @@ interface Props{
 const { fixed, top } = Astro.props
 ---
 
-<header id="header" class=`z-40 ${fixed} ${top} w-full transition duration-300`>
-    <div class="text-white flex justify-between px-4 py-3 text-center items-center w-[92%] mx-auto my-0">
+<header id="header" class={`z-40 ${fixed} ${top} w-full transition duration-300`}>
+    <div class="text-white flex justify-between px-4 py-3 items-center w-[92%] mx-auto">
         <div class="logo z-50 cursor-pointer">
-            <a href="../">
+            <a href="../" title="Comunidad Clan" class="inline-block" >
                 <LogoBlanco />
             </a>
         </div>
-        <div  class="burger lg:hidden text-3xl z-50 cursor-pointer">
-           
-                <ion-icon id="icon"  name="menu" class="hover:animate-jump animate-once animate-duration-500 animate-ease-in"></ion-icon>
-            
+        <div class="burger lg:hidden text-3xl z-50 cursor-pointer">
+            <ion-icon id="icon" name="menu" class="hover:animate-jump"></ion-icon>
         </div>
 
         <div class="nav absolute lg:static lg:min-h-fit bg-[url(../bg-burger.png)] lg:bg-none bg-cover min-h-[100vh] pt-2 lg:pt-0 left-0 top-0 duration-500 lg:w-auto w-full flex flex-col lg:flex-row justify-center z-40 items-center gap-8 text-gray-200 opacity-0 lg:opacity-100 pointer-events-none lg:pointer-events-auto">
-            <nav class="flex flex-col lg:flex-row justify-center text-center items-center gap-8">
-                <ul class="flex flex-col lg:flex-row gap-10 text-2xl font-bold lg:text-sm lg:font-semibold lg:gap-0 text-center items-center">
+            <nav class="flex flex-col lg:flex-row justify-center items-center gap-8">
+                <ul class="flex flex-col lg:flex-row gap-10 text-2xl font-bold lg:text-sm lg:font-semibold lg:gap-0 items-center">
                     <li>
-                        <a href="/" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Inicio</a>
-                    </li>
-                    <li class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">
-                        <a href="../sobre-nosotros" class="">
-                            Sobre Nosotros</i></a>
+                        <a href="/" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl" title="Inicio">Inicio</a>
                     </li>
                     <li>
-                        <a href="../eventos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Eventos</a>
+                        <a href="../sobre-nosotros" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl" title="Sobre Nosotros">
+                            Sobre Nosotros
+                        </a>
                     </li>
                     <li>
-                        <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Ministerios</a>
+                        <a href="../eventos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl" title="Eventos">Eventos</a>
                     </li>
                     <li>
-                        <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl">Contáctanos</a>
+                        <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl" title="Ministerios">Ministerios</a>
+                    </li>
+                    <li>
+                        <a href="../contactanos" class="hover:text-white hover:bg-slate-600 transition duration-300 px-5 py-2 rounded-xl" title="Contáctanos">Contáctanos</a>
                     </li>
                     
                 </ul>
-                <div class="rs flex ">
-                    <div class="ig px-4 border-r-2">
-                        <a href="https://www.instagram.com/comunidadclan/" target="_blank" class="text-2xl "><ion-icon name="logo-instagram"></ion-icon></a>
+                <div class="flex">
+                    <div class="px-4 border-r-2">
+                        <a href="https://www.instagram.com/comunidadclan/" target="_blank" class="text-2xl" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
                     </div>
-                    <div class="yt px-4">
-                        <a href="https://www.youtube.com/@comunidadclan" target="_blank" class="text-2xl"><ion-icon name="logo-youtube"></ion-icon></a>
+                    <div class="px-4">
+                        <a href="https://www.youtube.com/@comunidadclan" target="_blank" class="text-2xl" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
                     </div>
                 </div>
             </nav>

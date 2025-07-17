@@ -1,3 +1,5 @@
+import tailwindcssAnimated from "tailwindcss-animated";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -6,5 +8,5 @@ export default {
       "bg-img": "url(/public/bg-img.jpg)",
     },
   },
-  plugins: [require("tailwindcss-animated")],
+  plugins: [tailwindcssAnimated],
 };
