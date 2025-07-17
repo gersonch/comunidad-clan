@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isEmailTyping, setIsEmailTyping] = useState(false);
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!email) {
@@ -27,16 +28,19 @@ function NewsletterForm() {
 
         toast.error(error.message);
         setEmail("");
+        setIsEmailTyping(false);
         throw new Error("Error al suscribirse");
       } else {
         toast.success("Te has suscrito correctamente");
         setEmail("");
+        setIsEmailTyping(false);
       }
     } catch (error) {
       setEmail("");
       console.error(error);
     } finally {
       setLoading(false);
+      setIsEmailTyping(false);
     }
   };
 
@@ -48,13 +52,19 @@ function NewsletterForm() {
           placeholder="ingresa tu email"
           className="px-4 py-2 xl:w-full text-black"
           name="NewsLetter"
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={(event) => {
+            setEmail(event.target.value);
+            setIsEmailTyping(true);
+          }}
+          value={email}
         />
         <button
-          className="w-32 border-2 border-white px-4 py-2 hover:bg-slate-50 hover:text-black cursor-pointer transition flex items-center justify-center"
+          className={`w-32 border-2 border-white px-4 py-2 hover:bg-slate-50 hover:text-black cursor-pointer transition flex items-center justify-center ${
+            loading || !isEmailTyping ? "opacity-50 cursor-not-allowed" : ""
+          }`}
           value="Ingresar"
           type="submit"
-          disabled={loading}
+          disabled={loading || !isEmailTyping}
         >
           {loading ? (
             <div
