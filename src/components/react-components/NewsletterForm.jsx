@@ -15,14 +15,17 @@ function NewsletterForm() {
     const apiKey = import.meta.env.PUBLIC_API_KEY;
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/suscribers/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": apiKey,
+      const response = await fetch(
+        "https://newsletter-comunidad-clan.onrender.com/suscribers/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": apiKey,
+          },
+          body: JSON.stringify({ email: email }),
         },
-        body: JSON.stringify({ email: email }),
-      });
+      );
       if (!response.ok) {
         const error = await response.json();
 
