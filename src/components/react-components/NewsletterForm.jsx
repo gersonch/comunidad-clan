@@ -13,10 +13,11 @@ function NewsletterForm() {
       return;
     }
     const apiKey = import.meta.env.PUBLIC_API_KEY;
+    const apiUrl = import.meta.env.API_URL;
     try {
       setLoading(true);
       const response = await fetch(
-        "https://newsletter-comunidad-clan.onrender.com/suscribers/create",
+        apiUrl || "http://localhost:3000/suscribers/create",
         {
           method: "POST",
           headers: {
