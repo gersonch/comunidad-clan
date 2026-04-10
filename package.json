@@ -9,7 +9,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write ."
+    
   },
+  "engines": {
+    "node": "20.x"
+    },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^5.1.0",
