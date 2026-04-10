@@ -12,8 +12,8 @@ function NewsletterForm() {
       toast.error("Por favor, ingresa un email válido.");
       return;
     }
-    const apiKey = import.meta.env.PUBLIC_API_KEY;
-    const apiUrl = import.meta.env.API_URL;
+    const apiKey = import.meta.env.VITE_PUBLIC_API_KEY;
+    const apiUrl = import.meta.env.VITE_API_URL;
     try {
       setLoading(true);
       const response = await fetch(
