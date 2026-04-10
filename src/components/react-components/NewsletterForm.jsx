@@ -17,7 +17,7 @@ function NewsletterForm() {
     try {
       setLoading(true);
       const response = await fetch(
-        apiUrl || "http://localhost:3000/suscribers/create",
+        apiUrl,
         {
           method: "POST",
           headers: {
