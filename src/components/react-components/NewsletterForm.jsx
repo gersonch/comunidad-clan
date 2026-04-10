@@ -17,7 +17,7 @@ function NewsletterForm() {
     try {
       setLoading(true);
       const response = await fetch(
-        `${apiUrl}/suscribers/create`,
+        `https://newsletter-comunidad-clan.onrender.com/suscribers/create`,
         {
           method: "POST",
           headers: {
