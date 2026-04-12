@@ -17,7 +17,7 @@ function NewsletterForm() {
     try {
       setLoading(true);
       const response = await fetch(
-        `${apiUrl}/suscribers/create`,
+        `${apiUrl}/subscribers/create`,
         {
           method: "POST",
           headers: {
