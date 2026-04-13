@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -12,21 +13,15 @@ function NewsletterForm() {
       toast.error("Por favor, ingresa un email válido.");
       return;
     }
-    const apiKey = import.meta.env.PUBLIC_API_KEY;
-    const apiUrl = import.meta.env.API_URL;
     try {
-      setLoading(true);
-      const response = await fetch(
-        `${apiUrl}/suscribers/create`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": apiKey,
-          },
-          body: JSON.stringify({ email: email }),
+      setLoading(true); 
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({ email: email }),
+      });
       if (!response.ok) {
         const error = await response.json();
 
